@@ -13,7 +13,10 @@ inputs:
     description: 'Commit in the TestCafe repository to check out. The action builds TestCafe from this commit'
   args:
     description: 'Command line arguments passed to TestCafe'
-    required: true
+    required: false
+  cmd:
+    description: 'Command to use for custom runner'
+    required: false
 runs:
   using: 'node12'
   main: 'index.js'
