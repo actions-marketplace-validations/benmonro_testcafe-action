@@ -61,4 +61,6 @@ if (os.type() === 'Linux')
     xvfbCmd = `xvfb-run --server-args="-screen 0 1280x720x24" `;
 
 log('Running TestCafe...');
+log(testCafeCmdArg || testCafeCmd);
+
 execSync(`${xvfbCmd}${testCafeCmdArg || testCafeCmd} ${testCafeArguments}`, { stdio: 'inherit' });
