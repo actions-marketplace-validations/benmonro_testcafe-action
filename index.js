@@ -13,6 +13,7 @@ function getInputStr (argValue) {
     return argValue;
 }
 
+const testCafeCmdArg = getInput('cmd');
 const testCafeArguments = getInput('args');
 
 const version   = getInput('version');
@@ -60,4 +61,4 @@ if (os.type() === 'Linux')
     xvfbCmd = `xvfb-run --server-args="-screen 0 1280x720x24" `;
 
 log('Running TestCafe...');
-execSync(`${xvfbCmd}${testCafeCmd} ${testCafeArguments}`, { stdio: 'inherit' });
+execSync(`${xvfbCmd}${testCafeCmdArg || testCafeCmd} ${testCafeArguments}`, { stdio: 'inherit' });
